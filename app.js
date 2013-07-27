@@ -10,10 +10,8 @@
     lazy = require("lazy");
 
 
-  var collection = "pro";
-  // var collection = "HansTesting3";
-  // mongoose.connect('mongodb://209.129.244.25/speech-00');
-  mongoose.connect('mongodb://localhost/speech-00');
+  var collection = "data";
+  mongoose.connect('mongodb://localhost/pronunciation');
 
   server.listen(8080);
   app.use("/", express.static(__dirname + '/'));
@@ -28,11 +26,10 @@
 
   var db = mongoose.connection;
 
-
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() {
     console.log("mongoDB connected");
-    // getTranscript();
+    getTranscript();
   });
 
   var scheme = mongoose.Schema({
