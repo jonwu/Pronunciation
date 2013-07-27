@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect('http://209.129.244.25');
 var currentSearch;
 $('.search').on('click', function() {
 	$('.output ul li').remove();

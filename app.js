@@ -11,11 +11,11 @@
 
 
   var collection = "data";
-  mongoose.connect('mongodb://localhost/pronunciation');
+  mongoose.connect('mongodb://209.129.244.25/pronunciation');
 
-  server.listen(8080);
+  server.listen(9000);
   app.use("/", express.static(__dirname + '/'));
-  app.use("/css", express.static(__dirname + '/css'));
+  app.use("/js", express.static(__dirname + '/js'));
   app.use("/img", express.static(__dirname + '/img'));
 
   // app.use(express.static(path.join(__dirname, 'public')));
@@ -29,7 +29,7 @@
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() {
     console.log("mongoDB connected");
-    getTranscript();
+    // getTranscript();
   });
 
   var scheme = mongoose.Schema({
